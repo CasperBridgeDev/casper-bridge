@@ -1,0 +1,47 @@
+# scalar Bytes
+# scalar BigDecimal
+# scalar BigInt
+
+enum TransferStatus {
+  Created
+  Burned
+  Approved
+  Executed
+}
+
+enum ProofType {
+  Mint
+  Burn
+}
+
+type Proof @entity {
+  id: ID!
+
+  type: ProofType!
+  nonce: BigInt
+
+  src: Int
+  srcType: Int # ChainType
+  dest: Int
+  destType: Int # ChainType
+  srcToken: String!
+  destToken: String!
+
+  srcCaller: String!
+  destCaller: String!
+
+  amount: BigDecimal!
+  # fee: BigDecimal!
+
+  # txFee: BigDecimal!
+  txHash: Bytes!
+
+  # logIndex: BigInt!
+  blockNumber: BigInt!
+  timestamp: BigInt!
+}
+
+type BridgeTransfer @entity {
+  id: ID!
+  status: TransferStatus!
+}

@@ -1,0 +1,17 @@
+{
+  "name": "deft-bridge",
+  "license": "UNLICENSED",
+  "scripts": {
+    "codegen": "graph codegen",
+    "build": "graph build",
+    "create-local": "graph create --node http://localhost:8020/ org/super-project",
+    "remove-local": "graph remove --node http://localhost:8020/ org/super-project",
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 org/super-project"
+  },
+  "dependencies": {
+    "@graphprotocol/graph-cli": "0.20.0",
+    "@graphprotocol/graph-ts": "0.20.0",
+    "got": "^11.8.2"
+  },
+  "devDependencies": {}
+}
